@@ -1,0 +1,9 @@
+runtime: python310
+entrypoint: gunicorn -b :$PORT app:app
+
+env_variables:
+  SECRET_KEY: "4c80a106a9f0921ba09ff903b25de944e81c298d919e773d1aa4011063d3fe41"
+
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  target_throughput_utilization: 0.65
